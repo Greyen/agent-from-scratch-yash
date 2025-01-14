@@ -394,7 +394,7 @@ class Swarm:
                 print('#############################################')
                 break
             
-            partial_response = self.handle_tool_calls(message.tool_calls, active_agent.functions)
+            partial_response = self.handle_tool_calls(self.bool_stream,message.tool_calls, active_agent.functions)
             history.extend(partial_response.messages)
             
             if partial_response.agent:
